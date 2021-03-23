@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Proj_C</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap" rel="stylesheet">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		
+		<nav>
+            <span class="home"><a href="index.html"><h1>&#8213HOME&#8213</h1></a></span>
+            <span class="info"><a href="example1.html"><h1>&#8213INFO&#8213</h1></a></span>
+            
+            <a href=""><h2>Study</h2></a>
+            <a href=""><h2>Proto</h2></a>
+            <a href=""><h2>Docum</h2></a>
+        </nav>
+		
+		<div id="info">
+			<div class="title-1">
+				<h1>
+                    Saffron&amp;	
+				</h1>
+				<h2>
+				    LA, NY, Seoul
+				</h2>
+			</div>
+			<div class="title-2">
+				
+			</div>
+		</div>
+		
+		<canvas id="c"></canvas>
+		<div id="content"></div>
+        <script type="module" src="main.js"></script>
+        
+        <div class="scrollbar">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+        
+        <script>
+            window.onscroll = function() {myFunction()};
+
+                function myFunction() {
+                    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    var scrolled = (winScroll / height) * 100;
+                    document.getElementById("myBar").style.width = scrolled + "%";
+                }
+        </script>
+    </body>

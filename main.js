@@ -37,7 +37,7 @@ function init() {
         content.appendChild( element );
 
         const camera = new THREE.PerspectiveCamera( 50, 1, 1, 100 );
-        camera.position.set(0, 0, 12);
+        camera.position.set(0, 2, 12);
         camera.lookAt(0, 0, 0);
         scene.userData.camera = camera;
 
@@ -50,41 +50,67 @@ function init() {
 
         const loader = new GLTFLoader();
         
-        loader.load( './obj/mfdoom4.gltf', function(gltf) {
+        loader.load( './obj/mfdoomfin.gltf', function(gltf) {
             scenes[0].add( gltf.scene );
         }, undefined, function (error) {
             console.error( error );
         });
 
-        loader.load( './obj/thrasher2.gltf', function(gltf) {
+        loader.load( './obj/thrasher3.gltf', function(gltf) {
             scenes[1].add( gltf.scene );
         }, undefined, function (error) {
             console.error( error );
         });
         
-        loader.load( './obj/hoodie.gltf', function(gltf) {
+        loader.load( './obj/hoodiefin.gltf', function(gltf) {
             scenes[2].add( gltf.scene );
+        }, undefined, function (error) {
+            console.error( error );
+        });
+        
+        loader.load( './obj/tshirt.gltf', function(gltf) {
+            scenes[3].add( gltf.scene );
+        }, undefined, function (error) {
+            console.error( error );
+        });
+        
+        loader.load( './obj/ring1.gltf', function(gltf) {
+            scenes[4].add( gltf.scene );
+        }, undefined, function (error) {
+            console.error( error );
+        });
+        
+        loader.load( './obj/ring2.gltf', function(gltf) {
+            scenes[5].add( gltf.scene );
+        }, undefined, function (error) {
+            console.error( error );
+        });
+
+        
+        loader.load( './obj/ring3.gltf', function(gltf) {
+            scenes[6].add( gltf.scene );
+        }, undefined, function (error) {
+            console.error( error );
+        });
+        
+        loader.load( './obj/ring4.gltf', function(gltf) {
+            scenes[7].add( gltf.scene );
         }, undefined, function (error) {
             console.error( error );
         });
 
         
 
-        const light = new THREE.DirectionalLight( 0xffffff, 10 );
-        light.position.set( 20, 20, -100 );
-        light.lookAt(0,0,0);
-        scene.add( light );
         
-        const light2 = new THREE.DirectionalLight( 0xffffff, 10 );
-        light.position.set( 60, 50, 100 );
-        light.lookAt(0,0,0);
-        scene.add( light2 );
+        
+        const light = new THREE.DirectionalLight ( 0xffffff, 3);
+        scene.add( light )
         
 
         
         
         
-        const light3 = new THREE.AmbientLight( 0xffffff, 20 ); // soft white light
+        const light3 = new THREE.AmbientLight( 0xffffff, 1 ); // soft white light
         scene.add( light3 );
         
         scenes.push( scene );
@@ -138,6 +164,11 @@ function render() {
         scenes[ 0 ].rotation.y = Date.now() * 0.0005;
         scenes[ 1 ].rotation.y = Date.now() * 0.0005;
         scenes[ 2 ].rotation.y = Date.now() * 0.0005;
+        scenes[ 3 ].rotation.y = Date.now() * 0.0005;
+        scenes[ 4 ].rotation.y = Date.now() * 0.0005;
+        scenes[ 5 ].rotation.y = Date.now() * 0.0005;
+        scenes[ 6 ].rotation.y = Date.now() * 0.0005;
+        scenes[ 7 ].rotation.y = Date.now() * 0.0005;
 
         // get the element that is a place holder for where we want to
         // draw the scene
